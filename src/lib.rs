@@ -1,5 +1,4 @@
 #[macro_export]
-
 macro_rules! curry_fn (
     // ($s:ident, $( $arg:ident: $arg_type:tv ), * ) => {
     ($first_arg:ident:$first_arg_type:ty $(> $arg:ident:$arg_type:ty )* => $ret_type:ty {
@@ -11,6 +10,7 @@ macro_rules! curry_fn (
     };
 );
 
+#[macro_export]
 macro_rules! call_curried (
     ($function_name:ident, $( $arg:expr),*) => {
         $function_name$(($arg))*
